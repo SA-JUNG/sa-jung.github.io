@@ -1,0 +1,294 @@
+/* Portfolio Styles - Minimalism */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    color: #111111;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.8;
+}
+
+/* 콘텐츠 중앙 배치 */
+header, main, footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* 헤더 */
+header {
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.4rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+
+/* 섹션 공통 */
+section {
+    padding: 60px 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+section h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 24px;
+}
+
+section p, section li {
+    font-size: 1rem;
+    color: #333333;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section li {
+    padding: 4px 0;
+}
+
+/* About 섹션 */
+.about-block {
+    margin-bottom: 48px;
+}
+
+.about-subtitle {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+    color: #111111;
+}
+
+.essay-title {
+    font-size: 1.05rem;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 16px;
+    color: #333333;
+}
+
+.artist-quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555555;
+    border-left: 2px solid #cccccc;
+    padding-left: 20px;
+    margin: 24px 0;
+    line-height: 1.9;
+}
+
+.about-english {
+    color: #666666;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 40px;
+}
+
+.about-english p {
+    color: #666666;
+}
+
+/* 작품 그룹 소제목 */
+.works-group-title {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #999999;
+    letter-spacing: 0.05em;
+    margin-top: 48px;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.works-group-title:first-of-type {
+    margin-top: 0;
+}
+
+/* 대표작 (풀 너비) */
+.work-item.featured {
+    grid-column: 1 / -1;
+}
+
+.work-item.featured img {
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+/* 작품 그리드 */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: high-quality;
+    -ms-interpolation-mode: bicubic;
+}
+
+.work-info {
+    margin-top: 12px;
+}
+
+.work-info h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.work-info p {
+    font-size: 0.85rem;
+    color: #888888;
+}
+
+/* 연작 3열 2행 배치 */
+.works-grid-6 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+/* 반응형: 모바일에서 1열 */
+@media (max-width: 600px) {
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+    .works-grid-6 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+    }
+}
+
+/* Press 섹션 */
+.press-list {
+    list-style: none;
+    padding: 0;
+}
+
+.press-list li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.press-list a {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 16px 0;
+    text-decoration: none;
+    color: #333333;
+    transition: color 0.2s;
+}
+
+.press-list a:hover {
+    color: #000000;
+}
+
+.press-date {
+    font-size: 0.85rem;
+    color: #999999;
+    flex-shrink: 0;
+    width: 60px;
+}
+
+.press-title {
+    flex: 1;
+    font-size: 1rem;
+}
+
+.press-source {
+    font-size: 0.85rem;
+    color: #999999;
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .press-list a {
+        flex-wrap: wrap;
+    }
+    .press-title {
+        width: 100%;
+    }
+}
+
+/* 라이트박스 */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 24px;
+    right: 32px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* 푸터 */
+footer {
+    padding: 60px 0;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.9rem;
+    color: #666666;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.footer-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    color: #888888;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.footer-icons a:hover {
+    background: #e0e0e0;
+    color: #333333;
+}
